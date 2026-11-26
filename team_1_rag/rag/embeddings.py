@@ -17,7 +17,6 @@ def create_embeddings(chunks, model):
     """Преобразует текстовые чанки в векторы."""
     return model.encode(chunks, convert_to_numpy=True)
 
-
 if __name__ == "__main__":
     project_dir = Path(__file__).resolve().parents[1]
 
@@ -26,8 +25,8 @@ if __name__ == "__main__":
     sys.path.insert(0, str(project_dir / "rag"))
 
     # Импортируем функции подготовки текста
-    sys.path.insert(0, str(project_dir / "preparation"))
-    from chunking import load_text, clean_text, split_into_chunks
+    sys.path.insert(0, str(project_dir))
+    from preparation.chunking import load_text, clean_text, split_into_chunks
 
     source_path = project_dir / "source" / "source.txt"
     index_dir = project_dir / "index"

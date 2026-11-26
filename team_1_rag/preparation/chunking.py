@@ -1,16 +1,13 @@
 from pathlib import Path
 
-
 def load_text(file_path):
     """Загружает текст из файла."""
     return Path(file_path).read_text(encoding="utf-8")
-
 
 def clean_text(text):
     """Удаляет лишние пробелы и пустые строки."""
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     return "\n".join(lines)
-
 
 def split_into_chunks(text, chunk_size=2):
     """Разделяет текст на чанки по несколько предложений."""
@@ -22,7 +19,6 @@ def split_into_chunks(text, chunk_size=2):
         chunks.append(chunk)
 
     return chunks
-
 
 if __name__ == "__main__":
     base_dir = Path(__file__).resolve().parents[1]
