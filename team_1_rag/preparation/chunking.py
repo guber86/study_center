@@ -1,10 +1,3 @@
-from pathlib import Path
-
-
-def load_text(file_path):
-    """Загружает исходный текст из файла."""
-    return Path(file_path).read_text(encoding="utf-8")
-
 
 def clean_text(text):
     """Очищает текст от пустых строк и лишних пробелов."""
