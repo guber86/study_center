@@ -1,7 +1,6 @@
-from pathlib import Path
+from prepare_text import load_text
 
 from team_1_rag.preparation.chunking import (
-    load_text,
     clean_text,
     split_into_chunks,
 )
@@ -9,11 +8,8 @@ from team_1_rag.rag.ingestion.embedder import get_vectors
 from team_1_rag.rag.ingestion.repository import save
 
 
-SOURCE_PATH = Path(__file__).resolve().parents[2] / "source" / "source.txt"
-
-
 def main():
-    content = load_text(SOURCE_PATH)
+    content = load_text()
     cleaned = clean_text(content)
     chunks = split_into_chunks(cleaned)
 
